@@ -10,7 +10,8 @@ export class FlightBookingApplicationPage{
         this.numberOfPassengers = page.locator('#passengers'),
         this.selectTravelClass = page.locator('#travelClass');
         this.oneWayCheckBox = page.locator('#oneWay');
-        this.searchFlightsButton = 'button.w-100';
+        this.searchFlightsButton = page.locator('button.w-100');
+        this.availableFlightsLogo = page.locator('div.shadow-lg h3');
     }
 
     async selectCities(){
@@ -35,6 +36,6 @@ export class FlightBookingApplicationPage{
 
     async selectDepartureAndReturnDate(departureDate){
         await this.selectDepartureDate.fill(departureDate);
-        await this.page.waitForTimeout(5000);
+        await this.searchFlightsButton.click();
     }
 }

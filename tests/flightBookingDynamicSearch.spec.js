@@ -20,5 +20,6 @@ test(' Test Dynamic search filter in flight booking', async({page}) => {
     await flightBookingApplicationPage.selectOneWayCheckbox();
     await expect(flightBookingApplicationPage.oneWayCheckBox).toBeChecked();    
     expect(await flightBookingApplicationPage.oneWayCheckBox.isChecked()).toBe(true);
-    await flightBookingApplicationPage.selectDepartureAndReturnDate("2026-02-26")
+    await flightBookingApplicationPage.selectDepartureAndReturnDate("2026-02-26");
+    await expect(flightBookingApplicationPage.availableFlightsLogo).toBeVisible();
 })
