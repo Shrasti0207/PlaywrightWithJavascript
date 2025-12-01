@@ -14,6 +14,7 @@ export class FlightBookingApplicationPage{
         this.availableFlightsLogo = page.locator('div.shadow-lg h3');
     }
 
+    //select dropdown with different methods
     async selectCities(){
         await this.page.locator(this.fromSelectCityDropdown).selectOption({label:'Delhi'});
         await this.page.locator(this.toSelectCityDropdown).selectOption({value: 'New York'});
