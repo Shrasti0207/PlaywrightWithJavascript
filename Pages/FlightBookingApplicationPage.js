@@ -16,11 +16,11 @@ export class FlightBookingApplicationPage{
 
     async selectCities(){
         await this.page.locator(this.fromSelectCityDropdown).selectOption({label:'Delhi'});
-        // await this.page.locator(this.toSelectCityDropdown).selectOption({value: 'New York'});
-        // await this.page.waitForTimeout(5000);
+        await this.page.locator(this.toSelectCityDropdown).selectOption({value: 'New York'});
+        await this.page.waitForTimeout(2000);
 
-        // await this.page.locator(this.toSelectCityDropdown).selectOption({index: 2});
-        // await this.page.waitForTimeout(5000);
+        await this.page.locator(this.toSelectCityDropdown).selectOption({index: 2});
+        await this.page.waitForTimeout(2000);
 
         await this.page.locator(this.toSelectCityDropdown).selectOption('Mumbai');
     }
@@ -31,6 +31,8 @@ export class FlightBookingApplicationPage{
     }
 
     async selectOneWayCheckbox(){
+        await this.oneWayCheckBox.check();
+        await this.oneWayCheckBox.uncheck();
         await this.oneWayCheckBox.check();
     }
 
