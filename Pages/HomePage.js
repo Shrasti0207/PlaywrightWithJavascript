@@ -8,6 +8,8 @@ export class HomePage{
         this.automationTestingPraticeHubText = page.locator('div.py-5 h2');
         this.flightBookingLink = ' div.bg-light  li:nth-child(2)  a';
         this.loginPageLink = page.locator('div.bg-light li:nth-child(3) h4');
+        this.uiElementsPlaygroundLink = page.locator('div.bg-light li:nth-child(6) h4');
+
     }
 
     async goToWebsiteHomePage(){
@@ -24,5 +26,9 @@ export class HomePage{
 
     async clickOnLoginPageLink(){
         await this.loginPageLink.click();
+    }
+
+    async clickOnAutomateUIElementsLink(){
+        await this.uiElementsPlaygroundLink.click();
     }
 }
