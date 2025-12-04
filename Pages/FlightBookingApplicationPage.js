@@ -37,6 +37,7 @@ export class FlightBookingApplicationPage{
         await this.oneWayCheckBox.check();
     }
 
+    // pass values using parameters from test file
     async selectDepartureAndReturnDate(departureDate){
         await this.selectDepartureDate.fill(departureDate);
         await this.searchFlightsButton.click();
